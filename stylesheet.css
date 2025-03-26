@@ -1,15 +1,15 @@
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
-    background-color: #acc8d7; /* Grayish blue background */
-    color: black;
+    background-color: #e6ecf1; /* Light gray-blue background for a clean look */
+    color: #1f2a36; /* Dark slate for text for better readability */
 }
 
 header {
     position: relative;
-    height: 60vh; /* Reduced from 100vh to reveal body background */
+    height: 60vh;
     background: url('https://source.unsplash.com/1600x900/?technology,code') no-repeat center center/cover;
-    color: #608da2;
+    color: #e0f0ff; /* Soft text color to contrast with background image */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -32,7 +32,7 @@ header a {
     display: inline-block;
     text-decoration: none;
     padding: 0.75rem 1.5rem;
-    background-color: #3e76b3;
+    background-color: #4a6fa5; /* Muted professional blue */
     color: white;
     font-weight: bold;
     border-radius: 5px;
@@ -40,7 +40,7 @@ header a {
 }
 
 header a:hover {
-    background-color: #004085;
+    background-color: #2f4f73; /* Darker blue on hover */
 }
 
 section {
@@ -51,7 +51,7 @@ section {
 
 .section-title {
     font-size: 2.5rem;
-    color: #003366;
+    color: #2c3e50; /* Rich navy blue for titles */
     text-align: center;
     margin-bottom: 2rem;
     position: relative;
@@ -62,7 +62,7 @@ section {
     display: block;
     width: 60px;
     height: 4px;
-    background: #3e76b3;
+    background: #4a6fa5; /* Accent blue underline */
     margin: 0.5rem auto;
 }
 
@@ -75,11 +75,11 @@ section {
 .column {
     flex: 1;
     min-width: 300px;
-    background: white;
+    background: #f9fbfd; /* Off-white with subtle blue tint */
     padding: 1.5rem;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    color: #333;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05); /* Softer shadow for a cleaner look */
+    color: #2e3c49; /* Neutral dark gray-blue for text */
 }
 
 .project {
@@ -91,7 +91,7 @@ section {
 }
 
 .project a {
-    color: #3e76b3;
+    color: #4a6fa5; /* Link color consistent with buttons */
     text-decoration: none;
     font-weight: bold;
 }
@@ -101,7 +101,7 @@ section {
 }
 
 footer {
-    background: #3e76b3;
+    background: #2f4f73; /* Deep blue-gray footer */
     color: white;
     text-align: center;
     padding: 2rem 1rem;
@@ -112,6 +112,6 @@ footer p {
 }
 
 footer a {
-    color: white;
+    color: #cfe0f0; /* Lighter blue for footer links */
     text-decoration: underline;
 }
