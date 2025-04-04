@@ -1,95 +1,313 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nitya Ramireddy | Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="stylesheet.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nitya Ramireddy | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      background-color: #eef3f9;
+      color: #222;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      height: 100vh;
+      background: linear-gradient(to bottom right, #3e76b3, #88aadd), url('https://source.unsplash.com/1600x900/?technology,code') center/cover no-repeat;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 1rem;
+      animation: fadeIn 2s ease-out;
+    }
+
+    header h1 {
+      font-size: 4rem;
+      margin: 0;
+    }
+
+    header p {
+      font-size: 1.5rem;
+      margin-top: 0.5rem;
+    }
+
+    header a {
+      margin-top: 1.5rem;
+      display: inline-block;
+      text-decoration: none;
+      padding: 0.75rem 1.5rem;
+      background-color: #fff;
+      color: #3e76b3;
+      font-weight: 600;
+      border-radius: 30px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    header a:hover {
+      background-color: #3e76b3;
+      color: white;
+      transform: translateY(-3px);
+    }
+
+    section {
+      padding: 4rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeInUp 1s forwards;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      color: #003366;
+      text-align: center;
+      margin-bottom: 2rem;
+      position: relative;
+    }
+
+    .section-title::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 4px;
+      background: #3e76b3;
+      margin: 0.5rem auto;
+      border-radius: 2px;
+    }
+
+    .two-column {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .column {
+      flex: 1;
+      min-width: 300px;
+      background: white;
+      padding: 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .column:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .project {
+      margin-bottom: 1.5rem;
+    }
+
+    .project h3 {
+      margin: 0.5rem 0;
+    }
+
+    .project a {
+      color: #3e76b3;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .project a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      background: #003366;
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    footer a {
+      color: #a3d0ff;
+      text-decoration: underline;
+    }
+
+    #darkModeToggle {
+      margin-top: 1rem;
+      background: transparent;
+      border: 2px solid #fff;
+      color: white;
+      font-weight: 600;
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    #darkModeToggle:hover {
+      background-color: white;
+      color: #3e76b3;
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Dark Mode */
+    body.dark-mode {
+      background-color: #1a1a1a;
+      color: #f1f1f1;
+    }
+
+    body.dark-mode header {
+      background: linear-gradient(to bottom right, #000000, #1a1a1a), url('https://source.unsplash.com/1600x900/?technology,code') center/cover no-repeat;
+      color: white;
+    }
+
+    body.dark-mode .column {
+      background: #2b2b2b;
+      color: #f1f1f1;
+    }
+
+    body.dark-mode .project a {
+      color: #90caf9;
+    }
+
+    body.dark-mode footer {
+      background: #121212;
+      color: #eee;
+    }
+
+    body.dark-mode footer a {
+      color: #90caf9;
+    }
+  </style>
 </head>
 
 <body>
-    <header>
-        <h1>Nitya Ramireddy</h1>
-        <p>Computer Science Student | Machine Intelligence Enthusiast</p>
-        <a href="#education">Explore My Work</a>
-    </header>
+  <header>
+    <h1>Nitya Ramireddy</h1>
+    <p>Computer Science Student | Machine Intelligence Enthusiast</p>
+    <a href="#education">Explore My Work</a>
+  </header>
 
-    <section id="education">
-        <h2 class="section-title">Education</h2>
-        <div class="two-column">
-            <div class="column">
-                <h3>Purdue University</h3>
-                <p>B.S. in Computer Science, Machine Intelligence Track </p>
-                <p>Minor in Managment</p>
-                <p><strong>Relevant Coursework:</strong> Object-Oriented Programming, Data Structures and Algorithms, Programming in C, Computer Architecture, Fundamentals of CS</p>
-            </div>
-            <div class="column">
-                <h3>Round Rock High School</h3>
-                <p>Activities: Women in STEM (President), Student Council (VP), NHS, DECA.</p>
-            </div>
-        </div>
-    </section>
+  <section id="education">
+    <h2 class="section-title">Education</h2>
+    <div class="two-column">
+      <div class="column">
+        <h3>Purdue University</h3>
+        <p>B.S. in Computer Science, Machine Intelligence Track </p>
+        <p>Minor in Management</p>
+        <p><strong>Relevant Coursework:</strong> Object-Oriented Programming, Data Structures and Algorithms, Programming in C, Computer Architecture, Fundamentals of CS</p>
+      </div>
+      <div class="column">
+        <h3>Round Rock High School</h3>
+        <p>Activities: Women in STEM (President), Student Council (VP), NHS, DECA.</p>
+      </div>
+    </div>
+  </section>
 
-    <section id="experience">
-        <h2 class="section-title">Experience</h2>
-        <div class="two-column">
-            <div class="column">
-                <h3>Data Science Researcher</h3>
-                <p><strong>The Data Mine, Purdue University</strong> (Aug 2023 - May 2024)</p>
-                <ul>
-                    <li>Worked in an agile team of 8 to develop machine learning models for prediction of future warranty costs.</li>
-                    <li>Applied Python (Pandas & NumPy) for data cleaning and exploratory data analysis, uncovering trends and deviations for model accuracy.</li>
-                    <li>Created interactive dashboards and visual reports using Power BI and Tableau.</li>
-                </ul>
-            </div>
-            <div class="column">
-                <h3>Front-End Developer Intern</h3>
-                <p><strong>Hampshire Academia</strong> (Apr 2022 - Sep 2022)</p>
-                <ul>
-                    <li>Designed dynamic and graphical user-friendly interfaces with HTML, CSS, and JavaScript.</li>
-                    <li>Conducted cross-device/browser testing for seamless functionality.</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <section id="projects">
-        <h2 class="section-title">Projects</h2>
-        <div class="column">
-            <div class="project">
-                <h3>Currency Converter Pro (Web App) 💸</h3>
-                <p><em>JavaScript, HTML, CSS, RESTf API, Chart.js</em></p>
-                <p>Responsive currency conversion web app supporting 30+ currencies using Frankfurter and ExchangeRate APIs. <a href="https://nityar123.github.io/Currency-Converter/" target="_blank">View Project</a></p>
-            </div>
-            <div class="project">
-                <h3>Blockchain Supply Chain System ⛓️‍💥</h3>
-                <p><em>Python, Blockchain, Cryptographic Hashing</em></p>
-                <p>Built a simulated blockchain system to securely track products across a supply chain.</p>
-                <p>Implemented a proof-of-work algorithm to mine blocks and maintain transaction integrity.</p>
-                <p>Developed a dynamic input system to add and validate supply chain transactions.</p>
-            </div>
-            <div class="project">
-                <h3>Obstacle Dash Game 👾</h3>
-                <p><em>Python</em></p>
-                <p>An interactive game featuring collision detection, multiple difficulty levels, and gameplay timer.</p>
-            </div>
-        </div>
-    </section>
-
-    <section id="skills">
-        <h2 class="section-title">Technical Skills</h2>
+  <section id="experience">
+    <h2 class="section-title">Experience</h2>
+    <div class="two-column">
+      <div class="column">
+        <h3>Data Science Researcher</h3>
+        <p><strong>The Data Mine, Purdue University</strong> (Aug 2023 - May 2024)</p>
         <ul>
-            <li><strong>Languages:</strong> Java, Python, JavaScript, HTML, CSS, C, C++</li>
-            <li><strong>Tools:</strong> Git, Jira, Power BI, Tableau, Jupyter Notebook, JUnit Testing, Visual Studio Code, Eclipse IDE</li>
-            <li><strong>Other:</strong> Agile & Scrum, EDA, SDLC</li>
+          <li>Developed machine learning models to predict warranty costs.</li>
+          <li>Performed data cleaning, EDA with Python (Pandas & NumPy).</li>
+          <li>Built dashboards with Power BI and Tableau.</li>
         </ul>
-    </section>
+      </div>
+      <div class="column">
+        <h3>Front-End Developer Intern</h3>
+        <p><strong>Hampshire Academia</strong> (Apr 2022 - Sep 2022)</p>
+        <ul>
+          <li>Built interactive interfaces using HTML, CSS, and JavaScript.</li>
+          <li>Tested cross-browser compatibility for responsiveness.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-    <footer>
-        <p>&copy; 2025 Nitya Ramireddy. <a href="mailto:nitya.ramireddy@gmail.com">Email Me</a> 😊 </p>
-    </footer>
+  <section id="projects">
+    <h2 class="section-title">Projects</h2>
+    <div class="column">
+      <div class="project">
+        <h3>Currency Converter Pro (Web App) 💸</h3>
+        <p><em>JavaScript, HTML, CSS, REST API, Chart.js</em></p>
+        <p>Web app for currency conversion using APIs. <a href="https://nityar123.github.io/Currency-Converter/" target="_blank">View Project</a></p>
+      </div>
+      <div class="project">
+        <h3>Blockchain Supply Chain System ⛓️‍💥</h3>
+        <p><em>Python, Blockchain, Hashing</em></p>
+        <p>Simulated blockchain for supply chain tracking with proof-of-work mining.</p>
+      </div>
+      <div class="project">
+        <h3>Obstacle Dash Game 👾</h3>
+        <p><em>Python</em></p>
+        <p>Game with collision detection, difficulty levels, and a gameplay timer.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2 class="section-title">Technical Skills</h2>
+    <ul>
+      <li><strong>Languages:</strong> Java, Python, JavaScript, HTML, CSS, C, C++</li>
+      <li><strong>Tools:</strong> Git, Jira, Power BI, Tableau, Jupyter Notebook, JUnit, VS Code</li>
+      <li><strong>Other:</strong> Agile & Scrum, EDA, SDLC</li>
+    </ul>
+  </section>
+
+  <footer>
+    <button id="darkModeToggle">Dark Mode 🌙</button>
+    <p>&copy; 2025 Nitya Ramireddy. <a href="mailto:nitya.ramireddy@gmail.com">Email Me</a> 😊</p>
+  </footer>
+  
+
+  <script>
+    const toggleBtn = document.getElementById('darkModeToggle');
+    const body = document.body;
+
+    if (localStorage.getItem('darkMode') === 'true') {
+      body.classList.add('dark-mode');
+    }
+
+    toggleBtn.addEventListener('click', () => {
+      body.classList.toggle('dark-mode');
+      localStorage.setItem('darkMode', body.classList.contains('dark-mode'));
+    });
+
+    const sections = document.querySelectorAll('section');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.animation = 'fadeInUp 1s forwards';
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+  </script>
 </body>
-
 </html>
